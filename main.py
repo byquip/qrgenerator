@@ -116,3 +116,14 @@ def gen_qr_code(text: str, path_to_download: Path, path_to_save: Path = None):
     background.save(path_to_download)
     return True
 
+
+if __name__ == '__main__':
+    string = input("Enter String to transform in QR code: ")
+    print("Select picture")
+    file = filedialog.askopenfile(filetypes=[("pictures", "*.png; *.jpg; *.bmp")])
+    save_to = file.name.split(".")
+    save_to = [".".join(save_to[0:len(save_to)-2]), save_to[len(save_to)-1]] if len(save_to) > 2 else save_to
+    save_to = ".".join([f"{save_to[0]}_qr", save_to[1]])
+    gen_qr_code(string, file.name, save_to)
+    print(f"Saved to -> {save_to}")
+    import()
