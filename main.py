@@ -2,6 +2,7 @@ import qrcode
 from PIL import Image, ImageDraw
 from pyzbar.pyzbar import decode
 from path import Path
+from tkinter import filedialog
 
 
 # Путь до картинки с QR кодом
